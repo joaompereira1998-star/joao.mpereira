@@ -16,41 +16,6 @@
       background: #f8fafc;
       color: #111827;
       line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    .scroll-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 5px;
-      width: 0%;
-      background: linear-gradient(90deg, #2563eb, #7c3aed, #06b6d4);
-      z-index: 999;
-    }
-
-    .bg-orb {
-      position: fixed;
-      width: 420px;
-      height: 420px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(37,99,235,0.18), transparent 65%);
-      top: 80px;
-      right: -120px;
-      z-index: -1;
-      animation: floatOrb 8s ease-in-out infinite;
-    }
-
-    .bg-orb.two {
-      background: radial-gradient(circle, rgba(124,58,237,0.14), transparent 65%);
-      left: -150px;
-      top: 520px;
-      animation-delay: 2s;
-    }
-
-    @keyframes floatOrb {
-      0%, 100% { transform: translateY(0) scale(1); }
-      50% { transform: translateY(-40px) scale(1.08); }
     }
 
     .container {
@@ -63,8 +28,8 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(255,255,255,0.88);
-      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid #e5e7eb;
     }
 
@@ -75,28 +40,45 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 20px;
     }
 
     .brand {
-      font-weight: 900;
-      font-size: 1.1rem;
+      font-weight: 800;
+      font-size: 1.05rem;
+      white-space: nowrap;
     }
 
-    .nav-links a {
-      margin-left: 18px;
+    .tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .tabs a {
       text-decoration: none;
       color: #334155;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      padding: 8px 12px;
+      border-radius: 999px;
       font-weight: 700;
-      font-size: 0.92rem;
+      font-size: 0.86rem;
+      transition: 0.2s ease;
     }
 
-    .nav-links a:hover { color: #2563eb; }
+    .tabs a:hover {
+      background: #111827;
+      color: white;
+      border-color: #111827;
+    }
 
     .hero {
-      min-height: 86vh;
-      padding: 70px 0;
+      min-height: 82vh;
+      padding: 58px 0;
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1.05fr 0.95fr;
       gap: 42px;
       align-items: center;
     }
@@ -105,54 +87,32 @@
       display: inline-block;
       background: #e0f2fe;
       color: #075985;
-      padding: 8px 13px;
+      padding: 7px 12px;
       border-radius: 999px;
       font-weight: 800;
       font-size: 0.85rem;
       margin-bottom: 18px;
-      animation: pulseBadge 2.4s ease-in-out infinite;
-    }
-
-    @keyframes pulseBadge {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.04); }
     }
 
     h1 {
-      font-size: clamp(2.8rem, 7vw, 5rem);
+      font-size: clamp(2.6rem, 6vw, 4.7rem);
       line-height: 0.95;
       margin: 0 0 18px;
-      letter-spacing: -3px;
-    }
-
-    .gradient-text {
-      background: linear-gradient(90deg, #111827, #2563eb, #7c3aed);
-      background-size: 200% auto;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: shineText 4s linear infinite;
-    }
-
-    @keyframes shineText {
-      to { background-position: 200% center; }
+      letter-spacing: -2px;
+      color: #111827;
     }
 
     .subtitle {
       font-size: 1.35rem;
       color: #334155;
       font-weight: 800;
-      margin-bottom: 12px;
-      min-height: 34px;
-    }
-
-    .typing {
-      color: #2563eb;
+      margin-bottom: 18px;
     }
 
     .hero p {
       color: #475569;
       font-size: 1.06rem;
-      max-width: 620px;
+      max-width: 640px;
     }
 
     .hero-actions {
@@ -166,10 +126,10 @@
       text-decoration: none;
       padding: 13px 18px;
       border-radius: 14px;
-      font-weight: 900;
+      font-weight: 800;
       display: inline-block;
       border: 1px solid #cbd5e1;
-      transition: all 0.25s ease;
+      transition: 0.2s ease;
     }
 
     .btn-primary {
@@ -184,69 +144,56 @@
     }
 
     .btn:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 35px rgba(15, 23, 42, 0.16);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(15, 23, 42, 0.12);
+    }
+
+    .summary-box {
+      margin-top: 28px;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+    }
+
+    .summary-box h3 {
+      margin: 0 0 10px;
+      font-size: 1.1rem;
+    }
+
+    .summary-box ul {
+      margin: 0;
+      padding-left: 20px;
+      color: #475569;
     }
 
     .photo-card {
       background: white;
       padding: 14px;
-      border-radius: 30px;
+      border-radius: 28px;
       box-shadow: 0 24px 70px rgba(15, 23, 42, 0.14);
       border: 1px solid #e5e7eb;
-      animation: floatPhoto 5s ease-in-out infinite;
-    }
-
-    @keyframes floatPhoto {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-14px) rotate(1deg); }
     }
 
     .photo-card img {
       width: 100%;
       display: block;
-      border-radius: 24px;
+      border-radius: 22px;
       aspect-ratio: 4 / 5;
       object-fit: cover;
-      object-position: center 18%;
+      object-position: 34% 18%;
     }
 
     section {
-      padding: 60px 0;
+      padding: 58px 0;
+      scroll-margin-top: 90px;
     }
 
     .section-title {
-      font-size: 2.2rem;
+      font-size: 2rem;
       margin: 0 0 24px;
       letter-spacing: -1px;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin-top: 36px;
-    }
-
-    .stat {
-      background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 22px;
-      padding: 22px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(15,23,42,0.05);
-    }
-
-    .stat-number {
-      font-size: 2.2rem;
-      font-weight: 900;
-      color: #2563eb;
-    }
-
-    .stat-label {
-      color: #64748b;
-      font-weight: 800;
-      font-size: 0.9rem;
     }
 
     .grid {
@@ -254,43 +201,31 @@
       gap: 18px;
     }
 
-    .grid-2 { grid-template-columns: repeat(2, 1fr); }
-    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
 
     .card {
       background: white;
       border: 1px solid #e5e7eb;
-      border-radius: 24px;
+      border-radius: 22px;
       padding: 24px;
       box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
-      transition: all 0.25s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg, transparent, rgba(37,99,235,0.08), transparent);
-      transform: translateX(-100%);
-      transition: transform 0.6s ease;
-    }
-
-    .card:hover::before {
-      transform: translateX(100%);
+      transition: 0.2s ease;
     }
 
     .card:hover {
-      transform: translateY(-8px) scale(1.015);
-      box-shadow: 0 24px 55px rgba(15, 23, 42, 0.12);
-      border-color: #bfdbfe;
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
     }
 
     .card h3 {
       margin: 0 0 6px;
       font-size: 1.25rem;
-      position: relative;
     }
 
     .meta {
@@ -298,44 +233,40 @@
       font-weight: 800;
       margin-bottom: 14px;
       font-size: 0.92rem;
-      position: relative;
     }
 
     ul {
       padding-left: 20px;
       margin: 0;
       color: #475569;
-      position: relative;
+    }
+
+    p {
+      color: #475569;
     }
 
     .skill {
-      background: #eef2ff;
-      color: #3730a3;
+      background: #f1f5f9;
+      color: #334155;
       padding: 10px 13px;
       border-radius: 999px;
-      font-weight: 900;
+      font-weight: 800;
       display: inline-block;
       margin: 6px 6px 0 0;
       font-size: 0.9rem;
-      transition: all 0.2s ease;
-    }
-
-    .skill:hover {
-      background: #3730a3;
-      color: white;
-      transform: translateY(-4px) rotate(-1deg);
+      border: 1px solid #e2e8f0;
     }
 
     .contact-box {
-      background: linear-gradient(135deg, #111827, #1e293b);
+      background: #111827;
       color: white;
-      border-radius: 30px;
-      padding: 38px;
+      border-radius: 28px;
+      padding: 34px;
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 20px;
       align-items: center;
-      box-shadow: 0 24px 70px rgba(15, 23, 42, 0.25);
+      box-shadow: 0 20px 60px rgba(15, 23, 42, 0.25);
     }
 
     .contact-box h2 {
@@ -352,14 +283,12 @@
       display: block;
       color: white;
       text-decoration: none;
-      font-weight: 900;
+      font-weight: 800;
       margin: 6px 0;
-      transition: all 0.2s ease;
     }
 
     .contact-links a:hover {
       color: #93c5fd;
-      transform: translateX(6px);
     }
 
     footer {
@@ -369,41 +298,36 @@
       font-size: 0.9rem;
     }
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(45px) scale(0.98);
-      transition: all 0.75s ease;
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-
-    @media (max-width: 850px) {
+    @media (max-width: 900px) {
       .hero,
       .grid-2,
       .grid-3,
-      .contact-box,
-      .stats {
+      .contact-box {
         grid-template-columns: 1fr;
       }
 
-      .nav-links { display: none; }
-      .hero { padding: 42px 0; }
+      .hero {
+        padding: 42px 0;
+      }
+
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .tabs {
+        justify-content: flex-start;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="scroll-bar" id="scrollBar"></div>
-  <div class="bg-orb"></div>
-  <div class="bg-orb two"></div>
-
-  <nav id="navbar">
+  <nav>
     <div class="nav-inner">
       <div class="brand">João Pereira</div>
-      <div class="nav-links">
+      <div class="tabs">
+        <a href="#summary">Summary</a>
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
@@ -414,13 +338,12 @@
   </nav>
 
   <main class="container">
-    <section class="hero reveal">
+    <section class="hero" id="summary">
       <div>
         <div class="badge">Project & Innovation Manager</div>
-        <h1><span class="gradient-text">João Pereira</span></h1>
-
+        <h1>João Pereira</h1>
         <div class="subtitle">
-          <span id="typingText" class="typing"></span>
+          Innovation, entrepreneurship and strategic development.
         </div>
 
         <p>
@@ -433,23 +356,13 @@
           <a class="btn btn-secondary" href="cv-joao-pereira.pdf" download>Download CV</a>
         </div>
 
-        <div class="stats">
-          <div class="stat">
-            <div class="stat-number" data-target="3">0</div>
-            <div class="stat-label">Organizations</div>
-          </div>
-          <div class="stat">
-            <div class="stat-number" data-target="4">0</div>
-            <div class="stat-label">Academic Experiences</div>
-          </div>
-          <div class="stat">
-            <div class="stat-number" data-target="8">0</div>
-            <div class="stat-label">Core Skills</div>
-          </div>
-          <div class="stat">
-            <div class="stat-number" data-target="3">0</div>
-            <div class="stat-label">Languages</div>
-          </div>
+        <div class="summary-box">
+          <h3>Professional focus</h3>
+          <ul>
+            <li>Project and innovation management in startup incubation contexts.</li>
+            <li>Public sector strategy, territorial development and stakeholder alignment.</li>
+            <li>Business development, programme coordination and entrepreneurship ecosystems.</li>
+          </ul>
         </div>
       </div>
 
@@ -458,7 +371,7 @@
       </div>
     </section>
 
-    <section id="about" class="reveal">
+    <section id="about">
       <h2 class="section-title">About</h2>
       <div class="card">
         <p>
@@ -473,7 +386,7 @@
       </div>
     </section>
 
-    <section id="experience" class="reveal">
+    <section id="experience">
       <h2 class="section-title">Professional Experience</h2>
 
       <div class="grid">
@@ -510,13 +423,13 @@
       </div>
     </section>
 
-    <section id="education" class="reveal">
+    <section id="education">
       <h2 class="section-title">Education</h2>
 
       <div class="grid grid-2">
         <div class="card">
           <h3>Master’s Degree in Management, Major in Finance</h3>
-          <div class="meta">ISEG · 2021 — Present</div>
+          <div class="meta">ISEG — Lisbon School of Economics & Management · 2021 — Present</div>
           <p>Coursework completed. Relevant areas: Financial Markets, Mergers and Acquisitions, Business Strategy and Planning.</p>
         </div>
 
@@ -540,7 +453,7 @@
       </div>
     </section>
 
-    <section id="skills" class="reveal">
+    <section id="skills">
       <h2 class="section-title">Skills</h2>
 
       <div class="grid grid-2">
@@ -568,7 +481,7 @@
       </div>
     </section>
 
-    <section id="additional" class="reveal">
+    <section id="additional">
       <h2 class="section-title">Additional Experience</h2>
 
       <div class="grid grid-3">
@@ -592,7 +505,7 @@
       </div>
     </section>
 
-    <section id="contact" class="reveal">
+    <section id="contact">
       <div class="contact-box">
         <div>
           <h2>Let’s connect</h2>
@@ -611,92 +524,5 @@
   <footer>
     © 2026 João Pereira · Lisbon, Portugal
   </footer>
-
-  <script>
-    const roles = [
-      "Innovation, entrepreneurship and strategic development.",
-      "Project management for innovation ecosystems.",
-      "Public sector strategy with startup mindset.",
-      "Building bridges between ideas, teams and impact."
-    ];
-
-    let roleIndex = 0;
-    let charIndex = 0;
-    let deleting = false;
-    const typingText = document.getElementById("typingText");
-
-    function typeEffect() {
-      const current = roles[roleIndex];
-
-      if (!deleting) {
-        typingText.textContent = current.substring(0, charIndex++);
-        if (charIndex > current.length + 12) deleting = true;
-      } else {
-        typingText.textContent = current.substring(0, charIndex--);
-        if (charIndex === 0) {
-          deleting = false;
-          roleIndex = (roleIndex + 1) % roles.length;
-        }
-      }
-
-      setTimeout(typeEffect, deleting ? 35 : 55);
-    }
-
-    typeEffect();
-
-    const reveals = document.querySelectorAll(".reveal");
-    const scrollBar = document.getElementById("scrollBar");
-    const navbar = document.getElementById("navbar");
-    const counters = document.querySelectorAll(".stat-number");
-    let countersStarted = false;
-
-    function revealOnScroll() {
-      reveals.forEach(el => {
-        const top = el.getBoundingClientRect().top;
-        if (top < window.innerHeight - 100) {
-          el.classList.add("active");
-        }
-      });
-    }
-
-    function updateScrollBar() {
-      const scrollTop = window.scrollY;
-      const docHeight = document.body.scrollHeight - window.innerHeight;
-      const progress = (scrollTop / docHeight) * 100;
-      scrollBar.style.width = progress + "%";
-
-      navbar.style.boxShadow =
-        window.scrollY > 50 ? "0 8px 20px rgba(0,0,0,0.06)" : "none";
-    }
-
-    function startCounters() {
-      if (countersStarted) return;
-
-      const statsTop = document.querySelector(".stats").getBoundingClientRect().top;
-      if (statsTop < window.innerHeight - 80) {
-        countersStarted = true;
-
-        counters.forEach(counter => {
-          const target = Number(counter.dataset.target);
-          let current = 0;
-          const interval = setInterval(() => {
-            current++;
-            counter.textContent = current;
-            if (current >= target) clearInterval(interval);
-          }, 120);
-        });
-      }
-    }
-
-    window.addEventListener("scroll", () => {
-      revealOnScroll();
-      updateScrollBar();
-      startCounters();
-    });
-
-    revealOnScroll();
-    updateScrollBar();
-    startCounters();
-  </script>
 </body>
 </html>
